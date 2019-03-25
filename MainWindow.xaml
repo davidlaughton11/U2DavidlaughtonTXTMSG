@@ -5,10 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:U2DavidLaughtonTXTMSG"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="450" Width="800">
     <StackPanel >
+        <!-- User input-->
         <TextBox TextWrapping="Wrap" AcceptsReturn="True" x:Name="txtShortformInput" />
+        <!-- Initializes the code -->
         <Button Click="BtnShortToLong_Click" x:Name="btnShortToLong" Content="Translate"/>
+        <!-- Displays output-->
         <Label x:Name="txtOutput" />
     </StackPanel>
 </Window>
