@@ -51,7 +51,7 @@ namespace U2DavidLaughtonTXTMSG
             input = input.Replace("YW", "you’re welcome"); Console.WriteLine(input);
             input = input.Replace("TTYL", "talk to you later"); Console.WriteLine(input);
             
-            //Output to lael 
+            //Output to label 
             //Make output equal the new input after replaced
 
             string output = input;
