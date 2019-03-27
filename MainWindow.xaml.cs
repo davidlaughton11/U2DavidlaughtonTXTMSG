@@ -1,4 +1,7 @@
-﻿using System;
+﻿//David laughton
+//March 29, 2019
+//Replace the txtmsg shortforms with real language.
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,24 +22,30 @@ namespace U2DavidLaughtonTXTMSG
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        private string intput;
-
+    { 
+        
+        
         public MainWindow()
         {
             InitializeComponent();
         }
-        // If statements
-        // Spilt in textbox with string   
-        
-      
+        public static class Global
+        {
+            public static string txt;
+        }
+
         private void BtnShortToLong_Click(object sender, RoutedEventArgs e)
         {
             //Make a textbox and get the text
-            //Use .replace to replace the text 
+            //Button intializes 
+
             string input = txtShortformInput.Text;
+
+            //Use dot replace to replace the shortform with their translations
+            //Console.WriteLine brings new line to output
+
             input = input.Replace("CUZ", "because"); Console.WriteLine(input);
-            input = input.Replace("CU", "See you"); Console.WriteLine(input);
+            input = input.Replace("CU", "see you"); Console.WriteLine(input);
             input = input.Replace(":-)", "I’m happy"); Console.WriteLine(input);
             input = input.Replace(":-(", "I’m unhappy"); Console.WriteLine(input);
             input = input.Replace(";-)", "wink"); Console.WriteLine(input);
@@ -44,11 +53,16 @@ namespace U2DavidLaughtonTXTMSG
             input = input.Replace("(˜.˜)", "sleepy"); Console.WriteLine(input);
             input = input.Replace("TA", "totally awesome"); Console.WriteLine(input);
             input = input.Replace("CCC", "Canadian Computing Competition"); Console.WriteLine(input);
-            input = input.Replace("TTYL", "talk to you later"); Console.WriteLine(input);
-            input = input.Replace("TY", "thank-you"); Console.WriteLine(input);
             input = input.Replace("YW", "you’re welcome"); Console.WriteLine(input);
-            
+            input = input.Replace("TY", "thank-you"); Console.WriteLine(input);
 
+            //TO make the program shut down if TTYL is entered
+            if (input == ("TTYL"))
+            {
+                MessageBox.Show("talk to you later"); Application.Current.MainWindow.Close();
+            }
+
+            //Translation output
             string output = input;
             txtOutput.Content = output;
         }
